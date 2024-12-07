@@ -1,0 +1,56 @@
+﻿.login-container {
+    background-image: url('/images/signincontainer_background.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.login-card {
+    justify-content: space-between;
+    gap: 8rem;
+    background-image: url('/images/signin_background.png');
+    background-size: cover;
+
+}
+
+.main-container {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media(min-width: 768px) {
+    .store-image {
+        width: 100%;
+    }
+}
+
+.login-h {
+    color: #018c5b !important;
+}
+
+.input-wrapper {
+    background-color: #f1f1f1;
+}
+
+p {
+    margin: 0;
+}
+
+input {
+    background-color: #f1f1f1;
+    color: #969696;
+    border: none;
+    width: 100%;
+    outline: none;
+}
+
+    input::placeholder {
+        color: #969696;
+    }
+
+.submit-button {
+    background-color: rgb(78 195 175 / 90%);
+}
+
+    .submit-button:hover {
+        background-color: rgb(78 195 175 / 100%);
+    }

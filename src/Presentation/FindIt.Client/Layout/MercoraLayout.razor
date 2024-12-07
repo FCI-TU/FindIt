@@ -1,0 +1,32 @@
+﻿@using Blazored.Toast
+@using Blazored.Toast.Configuration
+
+@inherits LayoutComponentBase
+
+<BlazoredToasts Position="ToastPosition.BottomRight" Timeout="4" IconType="IconType.FontAwesome" SuccessClass="success-toast-override"
+				SuccessIcon="fa fa-thumbs-up" ErrorIcon="fa fa-bug" />
+
+<div class="page">
+	<main>
+		<div class="nav-container">
+			<MercoraNavMenu/>
+		</div>
+		<div>
+			@Body
+		</div>
+	</main>
+</div>
+
+@code
+{
+	// private async Task Logout()
+	// {
+	// 	await AccountService.Logout();
+
+	// 	await AuthenticationStateProvider.GetAuthenticationStateAsync();
+
+	// 	ToastService.ShowSuccess("Logout successful. See you soon!");
+
+	// 	NavigationManager.NavigateTo("/login");
+	// }
+}

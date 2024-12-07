@@ -1,0 +1,40 @@
+﻿@page "/product"
+
+<div id="page">
+    <div class="main">
+        <!-- Product Image -->
+        <div class="photo">
+            <img src="/images/movie.PNG" alt="movie" />
+        </div>
+
+        <!-- Product Details -->
+        <div class="mid">
+            <h1>Red Dead Redemption 2</h1>
+            <span class="icon-two">
+                <i class="bi bi-star pe-1"></i>
+            </span>
+            <span class="rating">/5</span>
+            <p class="description">
+                An action-adventure game set in an open world in the late 1800s, focusing on the life of an outlaw.
+            </p>
+            <form>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" />
+            </form>
+            <p class="price">Price per item: $45.25</p>
+        </div>
+
+        <!-- Actions -->
+        <div class="last">
+            <div class="buttons">
+                <button class="btn btn-primary">
+                    <a href="https://www.microsoft.com/ar-eg" target="_blank">Microsoft</a>
+                </button>
+                <button class="btn btn-secondary">Add to Cart</button>
+            </div>
+            <div class="total">
+                <p>Total Price: $45.25</p>
+            </div>
+        </div>
+    </div>
+</div>

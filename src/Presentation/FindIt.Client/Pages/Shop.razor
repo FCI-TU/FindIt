@@ -1,0 +1,73 @@
+﻿@page "/products"
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <h6 class="fw-bold text-danger mb-3">Brand</h6>
+            <ul class="list-group">
+                @foreach (var brand in Brands)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-star pe-1"></i> @brand</span>
+                    </li>
+                }
+            </ul>
+
+            <h6 class="fw-bold text-danger mb-3 mt-4">Category</h6>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">Men</li>
+            </ul>
+        </div>
+
+        <!-- Product Section -->
+        <div class="col-md-9">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h6 class="fw-bold">Showing results 1 from 2</h6>
+                <div class="d-flex align-items-center">
+                    <input class="form-control" type="search" placeholder="Search Here!" />
+                    <button class="btn btn-light"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                @foreach (var product in Products)
+                {
+                    <div class="col-sm-6 col-md-4">
+                        <div class="card h-100">
+                            <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" />
+                            <div class="card-body">
+                                <h6 class="card-title">@product.Name</h6>
+                                <p class="text-success fw-bold">$@product.Price</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<string> Brands = new List<string>
+    {
+        "Zara", "Puma", "Adidas", "H&M", "Beka"
+    };
+
+    private List<Product> Products = new List<Product>
+    {
+        new Product { Name = "Smart Hoodie For Your Show", Price = 15, ImageUrl = "https://via.placeholder.com/150" },
+        new Product { Name = "Cotton Jacket", Price = 25, ImageUrl = "https://via.placeholder.com/150" },
+        new Product { Name = "Suit", Price = 30, ImageUrl = "https://via.placeholder.com/150" },
+        new Product { Name = "Smart Shirt For Your Show", Price = 15, ImageUrl = "https://via.placeholder.com/150" },
+        new Product { Name = "Cotton Jacket", Price = 25, ImageUrl = "https://via.placeholder.com/150" },
+        new Product { Name = "Suit", Price = 30, ImageUrl = "https://via.placeholder.com/150" }
+    };
+
+    public class Product
+    {
+        public string Name { get; set; }
+        public double Price { get; set; }
+        public string ImageUrl { get; set; }
+    }
+}

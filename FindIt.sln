@@ -11,19 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{5CF8FBDC-C8C0-4DBA-9204-99FD833D543E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindIt.Application", "src\Core\FindIt.Application\FindIt.Application.csproj", "{6F4032FF-6D5C-4C34-A19A-A1ADD2745998}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindIt.Application", "src\Core\FindIt.Application\FindIt.Application.csproj", "{6F4032FF-6D5C-4C34-A19A-A1ADD2745998}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindIt.Domain", "src\Core\FindIt.Domain\FindIt.Domain.csproj", "{3BF18A7E-D5D6-4727-A621-8BF679A077F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindIt.Domain", "src\Core\FindIt.Domain\FindIt.Domain.csproj", "{3BF18A7E-D5D6-4727-A621-8BF679A077F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindIt.Infrastructure", "src\Infrastructure\FindIt.Infrastructure\FindIt.Infrastructure.csproj", "{4E90867A-9CE9-499C-A995-C3DC617FF26E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindIt.Infrastructure", "src\Infrastructure\FindIt.Infrastructure\FindIt.Infrastructure.csproj", "{4E90867A-9CE9-499C-A995-C3DC617FF26E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindIt.Persistence", "src\Infrastructure\FindIt.Persistence\FindIt.Persistence.csproj", "{294CE69D-AFBA-4ADF-9869-C0B38F7556A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindIt.Persistence", "src\Infrastructure\FindIt.Persistence\FindIt.Persistence.csproj", "{294CE69D-AFBA-4ADF-9869-C0B38F7556A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindIt.Shared", "src\Presentation\FindIt.Shared\FindIt.Shared.csproj", "{2731B510-55FE-4160-BF64-F07CEF8D7BC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindIt.Shared", "src\Presentation\FindIt.Shared\FindIt.Shared.csproj", "{2731B510-55FE-4160-BF64-F07CEF8D7BC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindIt.Server", "src\Presentation\FindIt.Server\FindIt.Server.csproj", "{95D15D45-F1D7-4E30-8BEF-46663C45B22F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindIt.Server", "src\Presentation\FindIt.Server\FindIt.Server.csproj", "{95D15D45-F1D7-4E30-8BEF-46663C45B22F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindIt.Client", "src\Presentation\FindIt.Client\FindIt.Client.csproj", "{2F5597D5-A51C-411A-A301-BA99683F7A60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindIt.Client", "src\Presentation\FindIt.Client\FindIt.Client.csproj", "{2F5597D5-A51C-411A-A301-BA99683F7A60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,98 @@
+﻿@page "/register"
+
+@inject IAuthenticationService AuthenticationService
+@inject NavigationManager NavigationManager
+@inject IToastService ToastService
+@inject ILocalStorageService LocalStorage
+
+<div class="register-container d-flex flex-lg-column align-items-center text-light align-self-center justify-content-center">
+	<EditForm Model="@UserData" OnValidSubmit="@RegisterUser" class="w-75 mx-auto">
+		<DataAnnotationsValidator />
+
+		<div class="main-container flex-column flex-lg-row d-flex p-4 justify-content-evenly align-items-center position-relative z-2 rounded-5">
+			<div class="register-card d-flex justify-content-center">
+				<img src="/images/register_card.png" alt="Store Image" class="store-image w-75" />
+			</div>
+
+			<div class="register-form d-flex flex-column gap-3 text-center">
+				<div class="form-header">
+					<h2 class="fw-bold text-white">Join Us Today!</h2>
+				</div>
+
+				<div class="d-flex gap-3">
+					<div>
+						<div class="input-wrapper fs-5 d-flex py-2 px-3 rounded-4">
+							<input placeholder="First name" @bind="@UserData.FirstName" />
+							<Icon Color="IconColor.Secondary" Size="IconSize.x3" Name="IconName.PersonFill" />
+						</div>
+						<ValidationMessage For="@(() => UserData.FirstName)" class="fw-bold text-danger" style="font-size: 0.9rem" />
+					</div>
+					<div>
+						<div class="input-wrapper fs-5 d-flex py-2 px-3 rounded-4">
+							<input placeholder="Last name" @bind="@UserData.LastName" />
+							<Icon Color="IconColor.Secondary" Size="IconSize.x3" Name="IconName.PersonFill" />
+						</div>
+						<ValidationMessage For="@(() => UserData.LastName)" class="fw-bold text-danger" style="font-size: 0.9rem" />
+					</div>
+				</div>
+
+				<div class="d-flex flex-column">
+					<div class="input-wrapper fs-5 d-flex py-2 px-3 rounded-4">
+						<input placeholder="Email" @bind="@UserData.Email" type="email" />
+						<Icon Color="IconColor.Secondary" Size="IconSize.x3" Name="IconName.EnvelopeFill" />
+					</div>
+					<ValidationMessage For="@(() => UserData.Email)" class="fw-bold text-danger" style="font-size: 0.9rem" />
+				</div>
+
+				<div class="d-flex flex-column">
+					<div class="input-wrapper fs-5 d-flex py-2 px-3 rounded-4">
+						<input placeholder="Phone Number" @bind="@UserData.PhoneNumber" type="tel" />
+						<Icon Color="IconColor.Secondary" Size="IconSize.x3" Name="IconName.PhoneFill" />
+					</div>
+					<ValidationMessage For="@(() => UserData.PhoneNumber)" class="fw-bold text-danger" style="font-size: 0.9rem" />
+				</div>
+
+				<div class="d-flex flex-column">
+					<div class="input-wrapper fs-5 d-flex py-2 px-3 rounded-4">
+						<input placeholder="Password" @bind="@UserData.Password" type="password" />
+						<Icon Color="IconColor.Secondary" Size="IconSize.x3" Name="IconName.PassFill" />
+					</div>
+					<ValidationMessage For="@(() => UserData.Password)" class="fw-bold text-danger" style="font-size: 0.9rem" />
+				</div>
+
+				<div class="d-flex flex-column">
+					<div class="input-wrapper fs-5 d-flex py-2 px-3 rounded-4">
+						<input placeholder="Re-enter password" @bind="@UserData.RePassword" type="password" />
+						<Icon Color="IconColor.Secondary" Size="IconSize.x3" Name="IconName.PassFill" />
+					</div>
+					<ValidationMessage For="@(() => UserData.RePassword)" class="fw-bold text-danger" style="font-size: 0.9rem" />
+				</div>
+
+				<button class="submit-button py-2 rounded-5 p-3 fs-5 mt-4 text-light border-0">Create Account</button>
+			</div>
+		</div>
+	</EditForm>
+</div>
+
+
+@code {
+	private readonly RegisterRequest UserData = new();
+
+	async Task RegisterUser()
+	{
+		var user = await AuthenticationService.RegisterAsync(UserData);
+
+		if (user != null)
+		{
+			await LocalStorage.SetItemAsync("AuthenticationToken", user.Token);
+
+			NavigationManager.NavigateTo("/");
+
+			ToastService.ShowSuccess("Account created successfully!");
+		}
+		else
+		{
+			ToastService.ShowError("Failed to create account!");
+		}
+    }
+}

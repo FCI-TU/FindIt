@@ -1,0 +1,127 @@
+﻿/* Reset and General Styles */
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button a {
+    color: #fff;
+}
+
+/* Main Content Styling */
+#page .main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 70px;
+    padding: 0 150px;
+    line-height: 1.5;
+}
+
+.photo img {
+    width: 200px;
+    height: 330px;
+}
+
+.mid h1 {
+    font-family: "Roboto", serif;
+    font-size: 2.5rem;
+    font-weight: 450;
+}
+
+.rating {
+    font-family: "Roboto", serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: darkgrey;
+}
+
+    .rating::before {
+        content: "4.70";
+        color: #0D6EFC;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+.icon-two {
+    color: rgb(228, 171, 29);
+    font-size: 1.875rem;
+}
+
+.description {
+    font-family: "Roboto", serif;
+    color: rgb(121, 121, 121);
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    font-family: "Roboto", serif;
+}
+
+form input {
+    width: 120px;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form::after {
+    content: "18.00 in stock";
+    display: block;
+    margin-top: 5px;
+    font-size: 0.875rem;
+    color: rgb(121, 121, 121);
+    font-family: "Roboto", serif;
+}
+
+.price {
+    font-family: "Roboto", serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #2A7B57;
+}
+
+/* Actions Section */
+.last {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    font-family: "Roboto", serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #2A7B57;
+}
+
+.btn-secondary {
+    background-color: #0D6EFC;
+}
+
+.btn:hover {
+    font-size: 1.1rem;
+}
+
+.total p {
+    font-family: "Roboto", serif;
+    color: #D0354D;
+    font-weight: bold;
+}

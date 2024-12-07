@@ -1,19 +1,13 @@
+using FindIt.Server;
+using FindIt.Server.ServicesExtensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages();
-
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.AddApplicationDependencies();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-    app.UseWebAssemblyDebugging();
-}
+app.UseSwaggerMiddleware();
 
 app.UseHttpsRedirection();
 

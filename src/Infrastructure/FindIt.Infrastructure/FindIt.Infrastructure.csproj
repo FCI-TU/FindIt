@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\Core\FindIt.Application\FindIt.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
